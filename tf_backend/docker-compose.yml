@@ -1,0 +1,13 @@
+version: "1.0"
+
+services:
+  fastapi-server:
+    build:
+      context: .  # Context directory containing your Dockerfile
+      dockerfile: Dockerfile  # Optional, defaults to 'Dockerfile'
+    ports:
+      - "8000:8000"  # Map port 8000 of the container to port 8000 on the host
+    volumes:
+      - .:/app  # Mount your project directory into the container (optional for development)
+    environment:
+      - ENV=development  # Add any environment variables if needed
